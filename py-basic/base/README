@@ -1,0 +1,20 @@
+Python面向对象
+面向过程编程：函数的调用集合
+面向对象编程：对象之间传递信息的集合；把类和对象作为程序的基本单元
+
+类和实例
+比如 类就是图纸 实例就是基于类生产出来的汽车
+
+类定义class 关键字self
+类的初始化函数 _init_  (类似Java的构造函数)
+面向对象的三大特性；继承 封装 多态
+
+
+使用模块
+1.一个Py文件称之为一个模块Module；可以被引用
+还有包的概念 package包下必须有个名为__init__的文件 无这个文件Python解释器无法解释这是一个包
+引入内置模块 大概类似Java的导包吧，有些许区别
+from function import MyFunction
+from function.MyFunction import myNum
+2.pip命令安装 pip install requests
+3.工具安装
