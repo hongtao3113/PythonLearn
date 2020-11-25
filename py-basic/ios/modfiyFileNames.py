@@ -5,7 +5,7 @@ import os
 
 
 def rename():
-    path = "F:\\idea_workspace\\scm-hegang\\scm-std-ap\\scm-std-admin\\src\\main\\webapp\\bank\\offLineFact\\apply\\js"
+    path = "F:\\idea_workspace\\scb-shupiaolian-v2\\scm-std-ap\\scm-std-admin\\src\\main\\webapp\\bill\\operate\\discountCommand"
     fileList = os.listdir(path)
     print("文件列表：", fileList)
     for file in fileList:
@@ -13,8 +13,8 @@ def rename():
         if os.path.isdir(oldFile):
             continue
         filename = os.path.splitext(file)[0]
-        if 'msFact' in filename:
-            filename = filename.replace('msFact', 'offLineFact')
+        if 'endorse' in filename:
+            filename = filename.replace('endorse', 'discount')
             pass
         print("oldFile:", filename)  # 文件名
         filetype = os.path.splitext(file)[1]

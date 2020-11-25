@@ -6,7 +6,7 @@ APP_ID = '21834800'
 API_KEY = 'gzsi6XkPupAE4xbhUcfq4TPO'
 SECRET_KEY = '5O74roabd3cz2MFbreyQAaDGQkUc6NR8'
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
-i = open('C:\\Users\\wk\\Desktop\\Image.png', 'rb')
+i = open('C:\\Users\\wk\\Desktop\\2.png', 'rb')
 # python 读取文件时报错UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 205: illegal multibyte sequence
 
 img = i.read()
