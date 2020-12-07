@@ -24,6 +24,8 @@ for one_column_data in smsSheet.iter_rows():
             if i > 1:
                 v = '"' + one_column_data[i].value + '"'
                 string = string + v
+                if i == 3:
+                    string = string + ',' + v
                 if maxColumn - 1 != i:
                     string = string + ','
                 else:
