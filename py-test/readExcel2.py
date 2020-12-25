@@ -1,4 +1,5 @@
 import openpyxl
+import re
 
 filePath = 'C:\\Users\\wk\\Desktop\\龙票易信短信模版.xlsx'
 wb = openpyxl.load_workbook(filePath)
@@ -12,6 +13,22 @@ print("最大行数:", maxRow)
 maxColumn = smsSheet.max_column
 print("最大列数:", maxColumn)
 print()
+
+regEx = "\\{(.*?)\\}"
+
+
+def replaceStr(content):
+    resp = re.findall(r"\{(.*?)\}", content)
+    # print(resp)
+    if len(resp) > 0:
+        for i in range(len(resp)):
+            content = content.replace(resp[i], str(i), 1)
+            pass
+        pass
+    pass
+    # print(content)
+    return content
+
 
 # 循环工作簿的所有行
 for row in smsSheet.iter_rows():
@@ -40,6 +57,9 @@ for row in smsSheet.iter_rows():
             if title is None:
                 title = ""
             sendTime = title + "-" + f
-            result = code + '("' + sendTime + '",' + '"' + content + '","' + receiver + '"),'
+            memo = replaceStr(content)
+            result = code + '("' + sendTime + '",' + '"' + memo + '","' + content + '","' + receiver + '"),'
             # print(code, content)
+            # print(result)
             print(result)
+    pass
